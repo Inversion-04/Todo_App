@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import { useTodo } from '../Contexts/TodoContext';
 
-//the passed todo is object as we know indivdual elemnt of todos array is object
 function TodoItem({ todo }) {
     const[isTodoEditable,setTodoEditable] = useState(false)
     const[todoMsg,setTodoMsg] = useState(todo.todo)
@@ -16,7 +15,7 @@ function TodoItem({ todo }) {
         toggleComplete(todo.id)
     }
 
-    //we spreaded the todo and updated the only single property
+
   return (
       <div
           className={`flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black ${
