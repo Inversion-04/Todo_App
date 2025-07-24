@@ -7,7 +7,6 @@ export const TodoContext = createContext({
         todo: "Todo msg",
         completed:false
     },
-    //  every todo have id,todomsg,completed
  ],
  addTodo : (todo)=>{},
  updateTodo : (id,todo)=>{},
