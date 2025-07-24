@@ -23,22 +23,15 @@ function App() {
      setTodos((prev)=>prev.map((todo)=>(todo.id === id ? {...todo,completed : !todo.completed} : todo)))
   }
 
-   //if application loads then 
+
   useEffect(()=>{
-      // Get the stored todos from localStorage
+
      const todos = JSON.parse(localStorage.getItem("todos"))
-     //return all values with key todos
-     // JSON.parse restores the original array/object structure from the string value in localStorage
-
-
-
      if(todos && todos.length>0){
         setTodos(todos) 
      }
-      // If todos exist and the array is not empty, set it to state
   },[]);
 
-  //now we want if anychange made in todos then the value must be added in localStorage
   useEffect(()=>{
     localStorage.setItem("todos",JSON.stringify(todos))
   },[todos])
