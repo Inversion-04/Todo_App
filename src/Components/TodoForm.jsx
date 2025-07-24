@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTodo } from '../Contexts/TodoContext';
-//now the TodoForm will addTodo so will will get its functionality from context 
+
 function TodoForm() {
     const[todo,setTodo] = useState("")
     const {addTodo} = useTodo()
@@ -8,12 +8,8 @@ function TodoForm() {
    const add = (e)=>{
      e.preventDefault()
      if(!todo) return 
-
      addTodo({todo:todo,completed:false})
-     //we pass object as todos array except object as elemnts and not passed
-     //id beacuse it is already handled in addTodo
      setTodo("")
-     // Clear the input field after adding
    }
   return (
       <form onSubmit={add}  className="flex">
